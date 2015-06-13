@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using tanerBlog.Models;
+using PagedList;
 
 namespace tanerBlog.Controllers
 {
@@ -15,9 +16,9 @@ namespace tanerBlog.Controllers
         private tanerBlogContext db = new tanerBlogContext();
 
         // GET: Articles
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
-            return View(db.articles.ToList());
+            return View(db.articles.OrderBy(m => m.Baslik).ToPagedList(sayfa, 5));
         }
 
         // GET: Articles/Details/5

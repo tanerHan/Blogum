@@ -1,4 +1,6 @@
-﻿@model IEnumerable<tanerBlog.Models.Articles>
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<tanerBlog.Models.Articles>
 
 @{
     ViewBag.Title = "Index";
@@ -45,3 +47,10 @@
 }
 
 </table>
+
+<div class="pagedList">
+    @Html.PagedListPager(Model, sayfa => Url.Action("Index", new { sayfa }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+</div>
+<script src="~/Content/jquery.js"></script>
+<script src="~/Content/custom.js"></script>
+<script src="~/Content/paginate.js"></script>

@@ -9,10 +9,6 @@ namespace tanerBlog.Models
 {
     public class Articles
     {
-        public Articles()
-        {
-            this.Tarih = DateTime.Now;
-        }
         public int ArticlesId { get; set; }
         public string Baslik { get; set; }
         public string Yazar { get; set; }
