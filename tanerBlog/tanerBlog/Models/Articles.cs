@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace tanerBlog.Models
 {
@@ -17,7 +18,7 @@ namespace tanerBlog.Models
         public string Yazar { get; set; }
         [DataType(DataType.Date, ErrorMessage="Date format is wrong please try again.")]
         public DateTime Tarih { get; set; }
-
+        [AllowHtml]
         [DataType(DataType.Html, ErrorMessage = "Enter article content in HTML format")]
         public string Icerik { get; set; }
 

@@ -9,21 +9,20 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<p class="label-danger col-md-4">
+    Please click to Details button to see Articles' Content
+</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Baslik)
+            Title
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Yazar)
+            Author
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tarih)
+            Date
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Icerik)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -36,9 +35,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tarih)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Icerik)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ArticlesId }) |
